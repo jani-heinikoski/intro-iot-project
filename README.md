@@ -32,27 +32,42 @@ sudo apt install python3-sense-emu sense-emu-tools
 sense_emu_gui
 ```
 
-- To send example measurements to the InfluxDB database you previously set up, run the measure.py script.
+- To send example measurements to the InfluxDB database you previously set up, run the measurement_sample_gen.py script in your terminal (cd to the /sensor directory first):
 
-```bash
-export INFLUXDB_TOKEN="<your all access API token>"
-export INFLUXDB_ORG="<your organization in InfluxDB Cloud Serverless>"
-export INFLUXDB_HOST="<your cluster URL in InfluxDB Cloud Serverless>"
-pip install -r <path_to_script>/requirements.txt
-python3 <path_to_script>/measure.py
-```
+    1. Install dependencies first with
 
-Example:
+    ```bash
+    pip install -r ./requirements.txt
+    ```
 
-```bash
-export INFLUXDB_TOKEN="3my7D...JIB4ezg=="
-export INFLUXDB_ORG="Organization"
-export INFLUXDB_HOST="https://eu-central-1-1.aws.cloud2.influxdata.com"
-pip install -r ./requirements.txt
-python3 ./measure.py
-```
+    2. Set the required environment variables
 
+    ```bash
+    export INFLUXDB_TOKEN="<your all access API token>"
+    export INFLUXDB_ORG="<your organization in InfluxDB Cloud Serverless>"
+    export INFLUXDB_HOST="<your cluster URL in InfluxDB Cloud Serverless>"
+    ```
+
+    3. Run the script
+
+    ```bash
+    python3 ./measurement_sample_gen.py
+    ```
+
+    Example:
+
+    ```bash
+    pip install -r ./requirements.txt
+    export INFLUXDB_TOKEN="3my7D...JIB4ezg=="
+    export INFLUXDB_ORG="Organization"
+    export INFLUXDB_HOST="https://eu-central-1-1.aws.cloud2.influxdata.com"
+    python3 ./measurement_sample_gen.py
+    ```
+
+    4. You're done! You should now have example data from the past week based on the Sense HAT emulator's values. The script makes the air temperature decrease linearly with a small amount of randomness introduced along with colder night temperatures.
+ 
 ## Authors
 
 - [@jani-heinikoski](https://github.com/jani-heinikoski)
 - [@ViliAu](https://github.com/ViliAu)
+
