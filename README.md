@@ -66,6 +66,32 @@ sense_emu_gui
 
     4. You're done! You should now have example data from the past week based on the Sense HAT emulator's values. The script makes the air temperature decrease linearly with a small amount of randomness introduced along with colder night temperatures.
  
+## Visualization script
+
+The visualization script is found in the graph folder. It runs on Windows platform (tested on Windows 10) using Python 3. To run the script, perform the following steps:
+
+1. Install dependencies in the graph folder first with
+
+    ```bat
+    pip install -r ./requirements.txt
+    ```
+
+2. Set the required environment variables
+
+    ```bat
+    set INFLUXDB_TOKEN="<your all access API token>"
+    set INFLUXDB_ORG="<your organization in InfluxDB Cloud Serverless>"
+    set INFLUXDB_HOST="<your cluster URL in InfluxDB Cloud Serverless>"
+    ```
+
+3. Run the script
+    ```bat
+    python3 ./graph_gen.py
+    ```
+
+4. You're done! matplotlib-module should provide you with graphs representing the data from the database.
+
+
 ## Authors
 
 - [@jani-heinikoski](https://github.com/jani-heinikoski)
