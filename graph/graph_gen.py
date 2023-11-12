@@ -2,14 +2,10 @@ import os
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
-import matplotlib.ticker as mticker
 import numpy as np
-from dotenv import load_dotenv
 from influxdb_client_3 import InfluxDBClient3, flight_client_options
 
 import certifi
-
-load_dotenv()
 
 # Environment variables for connecting to the InfluxDB database
 TOKEN = os.getenv('INFLUXDB_TOKEN')
