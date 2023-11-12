@@ -17,7 +17,7 @@ ORG = os.getenv('INFLUXDB_ORG')
 HOST = os.getenv('INFLUXDB_HOST')
 # Global variables, can change as per needed
 BUCKET = 'environment'
-MEASUREMENT = 'env_data'
+MEASUREMENT = 'sample_env_data'
 SENSOR_TAG = 'linux-ubuntu-vm'
 TZ = 'Europe/Helsinki'
 
